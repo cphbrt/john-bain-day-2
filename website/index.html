@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<title>API Stuff</title>
+</head>
+<body>
+<script>
+function doStuff() {
+  console.log("doing stuff");
+  var pStuff = document.getElementById("stuff");
+  pStuff.innerHTML = "done!";
+}
+
+function doAPICall() {
+  var request = new XMLHttpRequest();
+  var url = 'https://ghibliapi.herokuapp.com/films';
+  // var url = 'http://127.0.0.1:5000';
+  request.open('GET', url);
+  request.onload = function() {
+    console.log("received API data");
+    var data = this.response;
+    displayAPIResults(data);
+  }
+  request.send();
+}
+
+function displayAPIResults(data) {
+  console.log("displaying API results");
+  var pStuff = document.getElementById("stuff");
+  pStuff.innerHTML = data;
+}
+
+</script>
+  
+  <p id="stuff">
+    yo
+  </p>
+
+  <button onclick="doStuff()">
+    do stuff
+  </button>
+  
+  <button onclick="doAPICall()">
+    do Google
+  </button>
+  
+  <h4>References</h4>
+  <ul>
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">
+        https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+      </a>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">
+        https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+      </a>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server">
+        https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server
+      </a>
+    </li>
+    <li>
+      <a href="https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/">
+        https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/
+      </a>
+    </li>
+    <li>
+      <a href="https://programminghistorian.org/en/lessons/creating-apis-with-python-and-flask">
+        https://programminghistorian.org/en/lessons/creating-apis-with-python-and-flask
+      </a>
+    </li>
+    <li>
+      <a href="https://flask-cors.readthedocs.io/en/latest/">
+        https://flask-cors.readthedocs.io/en/latest/
+      </a>
+    </li>
+  </ul>
+</body>
+</html>
