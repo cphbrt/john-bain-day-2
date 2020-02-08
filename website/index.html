@@ -4,34 +4,7 @@
 <title>API Stuff</title>
 </head>
 <body>
-<script>
-function doStuff() {
-  console.log("doing stuff");
-  var pStuff = document.getElementById("stuff");
-  pStuff.innerHTML = "done!";
-}
 
-function doAPICall() {
-  var request = new XMLHttpRequest();
-  var url = 'https://ghibliapi.herokuapp.com/films';
-  // var url = 'http://127.0.0.1:5000';
-  request.open('GET', url);
-  request.onload = function() {
-    console.log("received API data");
-    var data = this.response;
-    displayAPIResults(data);
-  }
-  request.send();
-}
-
-function displayAPIResults(data) {
-  console.log("displaying API results");
-  var pStuff = document.getElementById("stuff");
-  pStuff.innerHTML = data;
-}
-
-</script>
-  
   <p id="stuff">
     yo
   </p>
@@ -39,11 +12,23 @@ function displayAPIResults(data) {
   <button onclick="doStuff()">
     do stuff
   </button>
-  
-  <button onclick="doAPICall()">
+
+  <button onclick="doAPICall('http://127.0.0.1:5000/introduction/')">
     do Google
   </button>
-  
+
+  <button onclick="doAPICall('http://127.0.0.1:5000/puppies/')">
+    do puppies
+  </button>
+
+  <input id="firstNum" type="number"></input>
+  <input id="secondNum" type="number"></input>
+
+
+  <button onclick="doAPIPush('http://127.0.0.1:5000/add/')">
+    add
+  </button>
+
   <h4>References</h4>
   <ul>
     <li>
@@ -77,5 +62,6 @@ function displayAPIResults(data) {
       </a>
     </li>
   </ul>
+  <script src="index.js"></script>
 </body>
 </html>
