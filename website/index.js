@@ -38,3 +38,17 @@ function doAPIPush(url){
   }
   request.send(postString);
 }
+
+function doAPIPrime(url){
+  var happyPrime = document.getElementById("happyPrime").value;
+  var postString = "happy_prime=" + happyPrime;
+
+  var request = new XMLHttpRequest();
+  request.open('POST', url);
+  request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  request.onload = function() {
+    console.log("received API data");
+    displayAPIResults(this.response);
+  }
+  request.send(postString)
+}
