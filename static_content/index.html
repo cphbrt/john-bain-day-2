@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>API Stuff</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -27,6 +28,15 @@
 
   <button onclick="doAPIPush('http://localhost:5000/add/')">
     add
+  </button>
+
+  <button onclick="doAPICallAbout('http://localhost:5000/about/')">
+    about
+  </button>
+
+  <input id="happyPrime" type="number"></input>
+  <button onclick="doAPIPrime('http://localhost:5000/happyprime/')">
+    Happy Prime
   </button>
 
   <h4>References</h4>
