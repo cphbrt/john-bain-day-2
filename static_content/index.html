@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>API Stuff</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -13,22 +14,28 @@
     do stuff
   </button>
 
-  <button onclick="doAPICall('http://127.0.0.1:5000/introduction/')">
+  <button onclick="doAPICall('http://localhost:5000/introduction/')">
     do Google
   </button>
 
-  <button onclick="doAPICall('http://127.0.0.1:5000/puppies/')">
+  <button onclick="doAPICall('http://localhost:5000/puppies/')">
     do puppies
   </button>
 
   <input id="firstNum" type="number"></input>
   <input id="secondNum" type="number"></input>
-  <button onclick="doAPIPush('http://127.0.0.1:5000/add/')">
+
+
+  <button onclick="doAPIPush('http://localhost:5000/add/')">
     add
   </button>
 
+  <button onclick="doAPICallAbout('http://localhost:5000/about/')">
+    about
+  </button>
+
   <input id="happyPrime" type="number"></input>
-  <button onclick="doAPIPrime('http://127.0.0.1:5000/happyprime/')">
+  <button onclick="doAPIPrime('http://localhost:5000/happyprime/')">
     Happy Prime
   </button>
 

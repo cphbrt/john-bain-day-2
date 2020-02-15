@@ -8,7 +8,7 @@ function doAPICall(url) {
   var request = new XMLHttpRequest();
   //var url = 'https://google.com'
   //var url = 'https://ghibliapi.herokuapp.com/films';
-  //var url = 'http://127.0.0.1:5000/introduction/';
+  //var url = 'http://localhost:5000/introduction/';
   request.open('GET', url);
   request.onload = function() {
     console.log("received API data");
@@ -22,6 +22,22 @@ function displayAPIResults(data) {
   console.log("displaying API results");
   var pStuff = document.getElementById("stuff");
   pStuff.innerHTML = data;
+}
+
+function doAPICallAbout(url){
+  var request = new XMLHttpRequest();
+  //var url = 'https://google.com'
+  //var url = 'https://ghibliapi.herokuapp.com/films';
+  //var url = 'http://localhost:5000/introduction/';
+  request.open('GET', url);
+  request.onload = function() {
+    console.log("received API data");
+    var obj = JSON.parse(this.response);
+    var data = "<h1>" + obj.solution + "</h1><p>" + obj.value + "</p>";
+
+    displayAPIResults(data);
+  }
+  request.send();
 }
 
 function doAPIPush(url){
